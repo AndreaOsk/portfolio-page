@@ -14,9 +14,6 @@
         background-color: #333;
       }
 
-      li {
-      }
-
       li a {
         display: block;
         color: lightgrey;
@@ -36,20 +33,32 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto;
+        gap: 12px 12px;
         grid-template-areas:
           "header header header header"
           "main main . sidebar"
           "footer footer footer footer";
         background-color: dimgray;
       }
-      .navigation {
+
+      .header {
         grid-area: header;
       }
-      .myName {
+      .main {
         grid-area: main;
-      }
-      body {
         background-color: #333;
+      }
+      .sidebar {
+        grid-area: sidebar;
+        background-color: #333;
+      }
+      .footer {
+        grid-area: footer;
+        background-color: #333;
+      }
+
+      body {
+        background-image: linear-gradient(#333, black);
       }
 
       h1 {
@@ -62,7 +71,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="navigation">
+      <div class="header">
         <ul>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./portfolio">Portfolio</a></li>
@@ -70,9 +79,18 @@
           <li><a href="./contact">Contact</a></li>
         </ul>
       </div>
-      <div class="myName">
+
+      <div class="main">
         <h1>Andrea Eliasdottir</h1>
         <h2>Designer & Developer</h2>
+      </div>
+
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+      </div>
+
+      <div class="footer">
+        <h2>Footer</h2>
       </div>
     </div>
   </body>
