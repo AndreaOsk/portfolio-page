@@ -4,6 +4,9 @@
     <title>AE Portfolio</title>
     <style>
       ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -12,33 +15,49 @@
       }
 
       li {
-        float: left;
       }
 
       li a {
         display: block;
-        color: white;
+        color: lightgrey;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
       }
 
       a:hover:not(.active) {
-        background-color: #111;
+        color: cadetblue;
       }
 
       .active {
         background-color: #4caf50;
       }
+      .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        column-gap: 8px;
+        row-gap: 8px;
+        background-color: dimgray;
+      }
+      body {
+        background-color: #333;
+      }
+      h1 {
+        color: black;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-    <h1>Andrea Eliasdottir | Designer & Developer</h1>
-
     <ul>
-      <li><a href="portfolio">Portfolio</a></li>
-      <li><a href="about-me">About Me</a></li>
-      <li><a href="contact">Contact</a></li>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./portfolio">Portfolio</a></li>
+      <li><a href="./about-me">About Me</a></li>
+      <li><a href="./contact">Contact</a></li>
     </ul>
+    <div class="main">
+      <h1>Andrea Eliasdottir | Designer & Developer</h1>
+    </div>
   </body>
 </html>
