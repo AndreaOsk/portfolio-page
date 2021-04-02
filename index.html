@@ -6,17 +6,16 @@
       ul {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-end;
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
       }
 
       li a {
         display: block;
-        color: lightgrey;
+        color: black;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -26,46 +25,79 @@
         color: cadetblue;
       }
 
-      .active {
-        background-color: #4caf50;
-      }
       .container {
+        min-height: 100vh;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 12px 12px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        /* gap: 12px 12px; */
         grid-template-areas:
-          "header header header header"
-          "main main . sidebar"
-          "footer footer footer footer";
-        background-color: dimgray;
+          "header header header sidebar sidebar"
+          "main main main sidebar sidebar"
+          "footer footer footer sidebar sidebar";
+        background-color: white;
       }
 
       .header {
         grid-area: header;
+        margin-top: 1rem;
       }
       .main {
         grid-area: main;
-        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        margin-top: 16rem;
+        margin-left: 6rem;
       }
       .sidebar {
         grid-area: sidebar;
-        background-color: #333;
+        background-image: linear-gradient(
+            135deg,
+            white,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(
+            to right,
+            white,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          url(./assets/hero.jpg);
+        background-size: cover;
       }
       .footer {
+        display: flex;
+        flex-direction: row;
         grid-area: footer;
-        background-color: #333;
+        margin-left: 6rem;
+        margin-bottom: 3rem;
       }
 
+      html,
       body {
-        background-image: linear-gradient(#333, black);
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: white;
       }
 
       h1 {
-        color: black;
+        background-image: url(./assets/hero.jpg);
+        background-size: 130%;
+        background-position: center;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(0, 0, 0, 0.15);
+        font-size: 7rem;
+        padding: 0;
+        margin: 0;
       }
       h2 {
-        color: black;
+        color: rgb(88, 88, 88);
+        font-size: 3.5em;
       }
     </style>
   </head>
@@ -82,15 +114,18 @@
 
       <div class="main">
         <h1>Andrea Eliasdottir</h1>
-        <h2>Designer & Developer</h2>
+        <h2>Designer / Developer</h2>
       </div>
 
-      <div class="sidebar">
-        <h2>Sidebar</h2>
-      </div>
+      <div class="sidebar"></div>
 
       <div class="footer">
-        <h2>Footer</h2>
+        <ul>
+          <li><a href="#">Github</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
   </body>
